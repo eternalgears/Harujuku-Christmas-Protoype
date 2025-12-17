@@ -3,8 +3,12 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define r = Character("Reina")
+define r = Character("Reina", image = "reina")
 define k = Character("Kuma")
+
+# nvl characters
+define r_nvl = Character("Reina", kind = nvl, image = "reina")
+define k_nvl = Character("Kuma", kind = nvl)
 
 # defaults 
 
@@ -16,19 +20,10 @@ define config.nvl_list_length = None
 
 label start:
 
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
-
     scene bg room
-
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
-    # directory.
 
     show reina default
 
-    # These display lines of dialogue.
 
     r "CODING MECHANICS"
 
@@ -36,7 +31,8 @@ label start:
 
     r "hihihihihiih"
 
-
+    show nighten e1m2_b:
+        ease 0.5 xalign 0.7 
 
     # This ends the game.
 
