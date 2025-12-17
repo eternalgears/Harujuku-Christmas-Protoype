@@ -37,7 +37,11 @@ label start:
     nvl_narrator "text tex ttext kuma"
     k_nvl "hi"
     r_nvl "hi"
-    r_nvl happy "hiiiii"
+    r_nvl neutral "hiiiii"
+    k_nvl "hiiiii"
+
+    show reina happy:
+        ease 0.5 xalign 0.5 
 
     # This ends the game.
 
