@@ -37,6 +37,7 @@ label start:
     nvl_narrator "text tex ttext kuma"
     k_nvl "hi"
     r_nvl "hi"
+    r_nvl happy "hiiiii"
 
     # This ends the game.
 
