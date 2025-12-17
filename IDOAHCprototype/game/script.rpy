@@ -31,8 +31,12 @@ label start:
 
     r "hihihihihiih"
 
-    show nighten e1m2_b:
+    show reina happy:
         ease 0.5 xalign 0.7 
+    
+    nvl_narrator "text tex ttext kuma"
+    k_nvl "hi"
+    r_nvl "hi"
 
     # This ends the game.
 
