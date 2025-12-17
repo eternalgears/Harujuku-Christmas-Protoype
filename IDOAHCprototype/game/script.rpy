@@ -51,6 +51,10 @@ label start:
 
     r "hihihihihiih"
 
+    k "hiiiiii"
+
+    r "ajsdfhkjahjskdfhkja"
+
     show reina happy:
         ease 0.5 xalign 0.7 
     
