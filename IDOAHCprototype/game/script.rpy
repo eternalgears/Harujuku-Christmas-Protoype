@@ -9,6 +9,7 @@ define k = Character("Kuma")
 # defaults 
 
 default preferences.text_cps = 40
+define config.nvl_list_length = None
 
 
 # The game starts here.
