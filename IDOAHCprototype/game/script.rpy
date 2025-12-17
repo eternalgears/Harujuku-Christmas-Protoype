@@ -3,19 +3,29 @@
 # voice bleeps
 
 init python:
-    def type_sound(event, interact=True, **kwargs):
+    def reina_sound(event, interact=True, **kwargs):
         if not interact:
             return
 
         if event == "show":
-            renpy.sound.play("audio/sound.wav", loop=True)
+            renpy.sound.play("audio/reina.wav", loop=True)
         elif event == "slow_done" or event == "end":
             renpy.sound.stop()
+
+    def kuma_sound(event, interact=True, **kwargs):
+        if not interact:
+            return
+
+        if event == "show":
+            renpy.sound.play("audio/kuma.wav", loop=True)
+        elif event == "slow_done" or event == "end":
+            renpy.sound.stop()
+
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define r = Character("Reina", image = "reina", callback = type_sound)
-define k = Character("Kuma")
+define r = Character("Reina", image = "reina", callback = reina_sound)
+define k = Character("Kuma", callback = kuma_sound)
 
 # nvl characters
 define r_nvl = Character("Reina", kind = nvl, image = "reina")
