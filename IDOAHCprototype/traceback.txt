@@ -1,0 +1,33 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 6, in script
+    define r = Character("Reina", image = "reina", callback = type_sound)
+  File "game/script.rpy", line 6, in <module>
+    define r = Character("Reina", image = "reina", callback = type_sound)
+                                                              ^^^^^^^^^^ 
+NameError: name 'type_sound' is not defined
+
+-- Full Traceback ------------------------------------------------------------
+
+Traceback (most recent call last):
+  File "game/script.rpy", line 6, in script
+    define r = Character("Reina", image = "reina", callback = type_sound)
+  File "renpy/ast.py", line 2452, in execute
+    self.set()
+    ~~~~~~~~^^
+  File "renpy/ast.py", line 2464, in set
+    value = renpy.python.py_eval_bytecode(self.code.bytecode)
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "renpy/python.py", line 1285, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+           ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "game/script.rpy", line 6, in <module>
+    define r = Character("Reina", image = "reina", callback = type_sound)
+                                                              ^^^^^^^^^^ 
+NameError: name 'type_sound' is not defined
+
+Windows-11-10.0.26100-SP0 AMD64
+Ren'Py 8.4.1.25072401
+IDOAHCprototype 1.0
+Wed Dec 17 14:16:29 2025

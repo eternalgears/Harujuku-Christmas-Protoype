@@ -1,5 +1,16 @@
 ﻿# The script of the game goes in this file.
 
+# voice bleeps
+
+init python:
+    def type_sound(event, interact=True, **kwargs):
+        if not interact:
+            return
+
+        if event == "show":
+            renpy.sound.play("audio/sound.wav", loop=True)
+        elif event == "slow_done" or event == "end":
+            renpy.sound.stop()
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
@@ -14,18 +25,6 @@ define k_nvl = Character("Kuma", kind = nvl)
 
 default preferences.text_cps = 40
 define config.nvl_list_length = None
-
-# voice bleeps
-
-init python:
-    def type_sound(event, interact=True, **kwargs):
-        if not interact:
-            return
-
-        if event == "show":
-            renpy.sound.play("audio/sound.wav", loop=True)
-        elif event == "slow_done" or event == "end":
-            renpy.sound.stop()
 
 # The game starts here.
 
