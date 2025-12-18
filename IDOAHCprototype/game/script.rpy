@@ -61,6 +61,7 @@ label start:
 
     scene bg room
 
+    play music "audio/apt-ost.mp3"
     show reina neutral:
         ease 0.5 xalign 0.9
 
