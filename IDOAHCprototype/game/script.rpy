@@ -24,12 +24,12 @@ init python:
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define r = Character("Reina", image = "reina", cb_name="reina", callback = CallbackList(reina_sound, name_callback))
-define k = Character("Kuma", cb_name="kuma", callback = CallbackList(kuma_sound, name_callback))
+define r = Character("Reina", image = "reina", cb_name="reina", color="#ffffff", style="reina_text", callback = CallbackList(reina_sound, name_callback))
+define k = Character("Kuma", image = "kuma", cb_name="kuma", color="#ffffff", style="kuma_text", callback = CallbackList(kuma_sound, name_callback))
 
 # nvl characters
 define r_nvl = Character("Reina", kind = nvl, image = "reina", callback = Phone_SendSound)
-define k_nvl = Character("Kuma", kind = nvl, callback = Phone_ReceiveSound)
+define k_nvl = Character("kuma :33", kind = nvl, callback = Phone_ReceiveSound)
 
 layeredimage reina1:
     #at sprite_highlight('reina')
@@ -55,6 +55,12 @@ image kuma = LayeredImageProxy("kuma1", transform=sprite_highlight("k"))
 default preferences.text_cps = 40
 define config.nvl_list_length = None
 
+# outline text
+style reina_text:
+    outlines [(4, "#FFB1A3", 0, 0)]
+
+style kuma_text:
+    outlines [(4, "#fca67e", 0, 0)]
 # The game starts here.
 
 label start:
