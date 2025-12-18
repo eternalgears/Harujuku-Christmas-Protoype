@@ -9,10 +9,10 @@ init -1 python:
 
     def Phone_ReceiveSound(event, interact=True, **kwargs):
         if event == "show_done":
-            renpy.sound.play("audio/ReceiveText.ogg")
+            renpy.sound.play("audio/receivetext.wav")
     def Phone_SendSound(event, interact=True, **kwargs):
         if event == "show_done":
-            renpy.sound.play("audio/SendText.ogg")
+            renpy.sound.play("audio/sendtext.wav")
     def print_bonjour():
         print("bonjour")
 
