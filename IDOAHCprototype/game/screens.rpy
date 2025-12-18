@@ -27,6 +27,9 @@ style gui_text:
 
 style button:
     properties gui.button_properties("button")
+    hover_sound "audio/reina.wav"
+    activate_sound "audio/kuma.wav" 
+    
 
 style button_text is gui_text:
     properties gui.text_properties("button")
@@ -225,6 +228,8 @@ style choice_vbox:
 
 style choice_button is default:
     properties gui.button_properties("choice_button")
+    hover_sound "audio/reina.wav"
+    activate_sound "audio/kuma.wav" 
 
 style choice_button_text is default:
     properties gui.text_properties("choice_button")
@@ -296,12 +301,15 @@ screen navigation():
         xpos -0.006
         yalign 0.88
 
-        spacing gui.navigation_spacing
+        #spacing gui.navigation_spacing
+        spacing 1
 
         if main_menu:
 
             imagebutton:
                 auto "menubuttons/start_%s.png"
+                hover_sound "audio/reina.wav"
+                activate_sound "audio/kuma.wav" 
                 action Start()
 
         # else:
@@ -313,12 +321,16 @@ screen navigation():
         #textbutton _("Load") action ShowMenu("load")
         imagebutton:
             auto "menubuttons/load_%s.png"
+            hover_sound "audio/reina.wav"
+            activate_sound "audio/kuma.wav" 
             action ShowMenu("load")
 
 
        #textbutton _("Options") action ShowMenu("preferences")
         imagebutton:
             auto "menubuttons/settings_%s.png"
+            hover_sound "audio/reina.wav"
+            activate_sound "audio/kuma.wav" 
             action ShowMenu("preferences")
 
 

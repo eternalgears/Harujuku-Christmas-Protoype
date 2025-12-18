@@ -29,7 +29,7 @@ define k = Character("Kuma", image = "kuma", cb_name="kuma", color="#ffffff", st
 
 # nvl characters
 define r_nvl = Character("Reina", kind = nvl, image = "reina", callback = Phone_SendSound)
-define k_nvl = Character("Kuma", kind = nvl, callback = Phone_ReceiveSound)
+define k_nvl = Character("kuma :33", kind = nvl, callback = Phone_ReceiveSound)
 
 layeredimage reina1:
     #at sprite_highlight('reina')
