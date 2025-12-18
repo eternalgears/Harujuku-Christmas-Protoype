@@ -28,8 +28,8 @@ define r = Character("Reina", image = "reina", cb_name="reina", callback = Callb
 define k = Character("Kuma", cb_name="kuma", callback = CallbackList(kuma_sound, name_callback))
 
 # nvl characters
-define r_nvl = Character("Reina", kind = nvl, image = "reina")
-define k_nvl = Character("Kuma", kind = nvl)
+define r_nvl = Character("Reina", kind = nvl, image = "reina", callback = Phone_SendSound)
+define k_nvl = Character("Kuma", kind = nvl, callback = Phone_ReceiveSound)
 
 layeredimage reina1:
     #at sprite_highlight('reina')
@@ -61,6 +61,7 @@ label start:
 
     scene bg room
 
+    play music "audio/apt-ost.mp3"
     show reina neutral:
         ease 0.5 xalign 0.9
 
