@@ -292,45 +292,58 @@ screen navigation():
     vbox:
         style_prefix "navigation"
 
-        xpos gui.navigation_xpos
-        yalign 0.5
+        # xpos gui.navigation_xpos
+        xpos -0.006
+        yalign 0.88
 
         spacing gui.navigation_spacing
 
         if main_menu:
 
-            textbutton _("Start") action Start()
+            imagebutton:
+                auto "menubuttons/start_%s.png"
+                action Start()
 
-        else:
+        # else:
 
-            textbutton _("History") action ShowMenu("history")
+            #textbutton _("History") action ShowMenu("history")
 
-            textbutton _("Save") action ShowMenu("save")
+            #textbutton _("Save") action ShowMenu("save")
 
-        textbutton _("Load") action ShowMenu("load")
+        #textbutton _("Load") action ShowMenu("load")
+        imagebutton:
+            auto "menubuttons/load_%s.png"
+            action ShowMenu("load")
 
-        textbutton _("Preferences") action ShowMenu("preferences")
+
+       #textbutton _("Options") action ShowMenu("preferences")
+        imagebutton:
+            auto "menubuttons/settings_%s.png"
+            action ShowMenu("preferences")
+
 
         if _in_replay:
 
             textbutton _("End Replay") action EndReplay(confirm=True)
 
-        elif not main_menu:
+        # elif not main_menu:
 
-            textbutton _("Main Menu") action MainMenu()
+            # textbutton _("Main Menu") action MainMenu()
 
-        textbutton _("About") action ShowMenu("about")
+        # textbutton _("About") action ShowMenu("about")
 
-        if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
+        # if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
             ## Help isn't necessary or relevant to mobile devices.
-            textbutton _("Help") action ShowMenu("help")
+            # textbutton _("Help") action ShowMenu("help")
 
-        if renpy.variant("pc"):
+        # if renpy.variant("pc"):
 
             ## The quit button is banned on iOS and unnecessary on Android and
             ## Web.
-            textbutton _("Quit") action Quit(confirm=not main_menu)
+            # textbutton _("Quit") action 
+            
+
 
 
 style navigation_button is gui_button
@@ -748,13 +761,18 @@ screen preferences():
                         label _("Display")
                         textbutton _("Window") action Preference("display", "window")
                         textbutton _("Fullscreen") action Preference("display", "fullscreen")
-
+                        label _("Game")
+                        textbutton _("Save") action ShowMenu('save')
+                        textbutton _("Main Menu") action MainMenu()
+                        textbutton _("Quit") action Quit(confirm=not main_menu)
+                        
                 vbox:
                     style_prefix "check"
                     label _("Skip")
                     textbutton _("Unseen Text") action Preference("skip", "toggle")
                     textbutton _("After Choices") action Preference("after choices", "toggle")
                     textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
+
 
                 ## Additional vboxes of type "radio_pref" or "check_pref" can
                 ## be added here, to add additional creator-defined preferences.
